@@ -12,11 +12,11 @@
 <body>
   <div class="container">
     <header class="header">
-      <div class="header-right">
+      <div class="header-left">
         <a href="{% url 'team11_start_exam' %}" class="home-btn">بازگشت</a>
       </div>
 
-      <div class="header-left">
+      <div class="header-right">
         <div class="flag-settings">
           <img src="{% static 'team11/public/images/settings.png' %}" alt="" class="settings-icon">
           <div class="iran-flag">
@@ -105,21 +105,6 @@
 
     .btn-secondary:hover {
       background: #e88f87;
-    }
-
-    .home-btn {
-      padding: 10px 20px;
-      background: var(--light-blue);
-      color: var(--navy);
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s;
-    }
-
-    .home-btn:hover {
-      background: var(--dark-blue);
-      color: white;
     }
   </style>
 
