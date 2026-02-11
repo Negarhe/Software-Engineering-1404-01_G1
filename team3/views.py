@@ -64,3 +64,6 @@ def exam(request):
         "packs": pack_cards,
     }
     return render(request, f"{TEAM_NAME}/exam.html", ctx)
+
+def feedback(request):
+    return render(request, f"{TEAM_NAME}/feedback.html")
