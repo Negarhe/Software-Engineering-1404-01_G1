@@ -48,26 +48,51 @@
     <main class="ielts-main" style="background-color: white">
         <section class="ielts-hero">
             <div class="hero-image">
-                <img src="{% static 'team3/images/exma.jpg' %}" alt="IELTS Exam Simulator" class="ielts-hero-img">
+                <img src="{% static 'team3/public/images/feedback.jpeg' %}" alt="feedback image" class="ielts-hero-img">
             </div>
             <div class="hero-content" style="display: flex;justify-content: center;align-items: center">
                 <div style="padding: 50px 0px 0px 0px">
-                    <h1 style="font-size: 48px; font-weight: bold;">شبیه ساز آزمون های {{ system_fa }}</h1>
-                    <p style="font-size: 22px;">همین حالا اولین آزمون رو شروع کن!</p>
+                    <h1 style="font-size: 48px; font-weight: bold;">فیدبک و بررسی ازمون با هوش مصنوعی</h1>
+                    <p style="font-size: 22px;">همین حالا ازمون تو انتخاب کن و فیدبک بگیر!</p>
                 </div>
             </div>
         </section>
 
         <section class="tests-section">
             <div class="tests-grid" style="padding: 0px 20px">
-
-                {% for p in packs %}
+                {% for c in cards %}
                 <div class="test-card">
-                    <h3 class="test-title">{{ p.title }}</h3>
-                    <button class="test-btn" onclick="location.href='/team3/start-exam?exam_id={{ p.sections.speaking }}'">Speaking</button>
-                    <button class="test-btn" onclick="location.href='/team3/start-exam?exam_id={{ p.sections.writing }}'">Writing</button>
+                    <h3 class="test-title">{{ c.title }}</h3>
+
+                    {% if c.sections.speaking %}
+                    <button class="test-btn" onclick="location.href='/team3/feedback-detail?exam_id={{ c.sections.speaking }}'">Speaking</button>
+                    {% else %}
+                    <button class="test-btn" disabled>Speaking</button>
+                    {% endif %}
+
+                    {% if c.sections.writing %}
+                    <button class="test-btn" onclick="location.href='/team3/feedback-detail?exam_id={{ c.sections.writing }}'">Writing</button>
+                    {% else %}
+                    <button class="test-btn" disabled>Writing</button>
+                    {% endif %}
+
+                    {% if c.sections.reading %}
+                    <button class="test-btn" onclick="location.href='/team3/feedback-detail?exam_id={{ c.sections.reading }}'">Reading</button>
+                    {% else %}
                     <button class="test-btn" disabled>Reading</button>
+                    {% endif %}
+
+                    {% if c.sections.listening %}
+                    <button class="test-btn" onclick="location.href='/team3/feedback-detail?exam_id={{ c.sections.listening }}'">Listening</button>
+                    {% else %}
                     <button class="test-btn" disabled>Listening</button>
+                    {% endif %}
+
+                    <div class="feedback-divider"></div>
+
+                    {% if c.last_attempt_at %}
+                    <p>آخرین زمان شرکت: {{ c.last_attempt_at|date:"Y-m-d H:i" }}</p>
+                    {% endif %}
                 </div>
                 {% empty %}
                 <div class="test-card" style="grid-column: 1 / -1;">
@@ -75,7 +100,6 @@
                     <p class="test-description">فعلاً آزمونی برای این سیستم ثبت نشده است.</p>
                 </div>
                 {% endfor %}
-
             </div>
         </section>
     </main>

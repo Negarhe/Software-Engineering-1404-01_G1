@@ -792,3 +792,23 @@ body {
     border-color: var(--dark-blue);
     color: var(--navy);
 }
+
+.feedback-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.feedback-meta {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 2px 0;
+}
+
+.feedback-divider {
+    width: 50%;
+    height: 1px;
+    background-color: var(--light-blue);
+    margin: 16px 0 20px 0;
+}
