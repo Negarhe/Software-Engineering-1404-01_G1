@@ -53,7 +53,7 @@
             </div>
             <div class="hero-content" style="display: flex;justify-content: center;align-items: center">
                 <div style="padding: 50px 0px 0px 0px">
-                    <h1 style="font-size: 48px; font-weight: bold;">شبیه ساز آزمون های آیلتس</h1>
+                    <h1 style="font-size: 48px; font-weight: bold;">شبیه ساز آزمون های {{ system_fa }}</h1>
                     <p style="font-size: 22px;">همین حالا اولین آزمون رو شروع کن!</p>
                 </div>
             </div>
@@ -61,30 +61,22 @@
 
         <section class="tests-section">
             <div class="tests-grid" style="padding: 0px 20px">
-                <div class="test-card">
-                    <h3 class="test-title">آزمون شماره 1</h3>
-                    <button class="test-btn">Writing</button>
-                    <button class="test-btn">Speaking</button>
-                    <button class="test-btn" disabled>Reading</button>
-                    <button class="test-btn" disabled>Listening</button>
-                </div>
 
+                {% for p in packs %}
                 <div class="test-card">
-                    <h3 class="test-title">آزمون شماره 2</h3>
-                    <button class="test-btn">Writing</button>
-                    <button class="test-btn">Speaking</button>
+                    <h3 class="test-title">{{ p.title }}</h3>
+                    <button class="test-btn" onclick="location.href='/team3/start-exam?exam_id={{ p.sections.speaking }}'">Speaking</button>
+                    <button class="test-btn" onclick="location.href='/team3/start-exam?exam_id={{ p.sections.writing }}'">Writing</button>
                     <button class="test-btn" disabled>Reading</button>
                     <button class="test-btn" disabled>Listening</button>
                 </div>
+                {% empty %}
+                <div class="test-card">
+                    <h3 class="test-title">هیچ آزمونی پیدا نشد</h3>
+                    <p class="test-description">فعلاً آزمونی برای این سیستم ثبت نشده است.</p>
+                </div>
+                {% endfor %}
 
-                <!-- Test Card 3 -->
-                <div class="test-card">
-                    <h3 class="test-title">آزمون شماره 3</h3>
-                    <button class="test-btn">Writing</button>
-                    <button class="test-btn">Speaking</button>
-                    <button class="test-btn" disabled>Reading</button>
-                    <button class="test-btn" disabled>Listening</button>
-                </div>
             </div>
         </section>
     </main>
