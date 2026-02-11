@@ -64,6 +64,3 @@ def exam(request):
         "packs": pack_cards,
     }
     return render(request, f"{TEAM_NAME}/exam.html", ctx)
-
-def test(request):
-    return render(request,f"{TEAM_NAME}/test.html")
