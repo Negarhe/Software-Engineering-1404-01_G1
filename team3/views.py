@@ -2,6 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from core.auth import api_login_required
 from team3.models import ExamPack, Exam, ExamSystem, ExamSection
+from .models import Exam
 
 TEAM_NAME = "team3"
 
@@ -67,3 +68,16 @@ def exam(request):
 
 def feedback(request):
     return render(request, f"{TEAM_NAME}/feedback.html")
+
+def speaking_exam(request):
+    exam_id = request.GET.get("exam_id")
+
+    exam = None
+    if exam_id:
+        exam = get_object_or_404(Exam, id=exam_id)
+
+    context = {
+        "exam": exam,
+        "exam_id": exam_id,
+    }
+    return render(request, f"{TEAM_NAME}/speaking_exam.html", context)

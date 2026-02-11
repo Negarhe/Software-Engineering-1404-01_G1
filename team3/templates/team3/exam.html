@@ -10,7 +10,6 @@
 </head>
 <body>
 <div class="container">
-    <!-- HEADER SECTION (unchanged structure) -->
     <header class="header">
         <div class="header-left">
             <a href="{% url 'home' %}" class="home-btn">خانه</a>
@@ -65,7 +64,7 @@
                 {% for p in packs %}
                 <div class="test-card">
                     <h3 class="test-title">{{ p.title }}</h3>
-                    <button class="test-btn" onclick="location.href='/team3/start-exam?exam_id={{ p.sections.speaking }}'">Speaking</button>
+                    <<button class="test-btn" onclick="location.href='{% url "speaking_exam" %}?exam_id={{ p.sections.speaking }}'">Speaking</button>
                     <button class="test-btn" onclick="location.href='/team3/start-exam?exam_id={{ p.sections.writing }}'">Writing</button>
                     <button class="test-btn" disabled>Reading</button>
                     <button class="test-btn" disabled>Listening</button>
