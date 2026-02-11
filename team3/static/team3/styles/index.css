@@ -426,7 +426,7 @@ body {
     border-radius: 40px;
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 10px;
     margin: 40px 0;
 }
 
@@ -492,7 +492,7 @@ body {
 
 /* Tests Section */
 .tests-section {
-    padding: 20px 0;
+    padding: 0px 0px 50px 0px;
 }
 
 .section-title {
@@ -593,6 +593,7 @@ body {
     transition: all 0.3s ease;
     margin-top: auto;
     width: 70%;
+    margin-bottom: 5px;
 }
 
 .test-btn:hover {
@@ -761,4 +762,33 @@ body {
     background-color: var(--navy);
     color: var(--white);
     border-color: var(--navy);
+}
+
+/* ===== Disabled Button Styles ===== */
+.test-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: grayscale(30%);
+}
+
+.test-btn:disabled:hover {
+    background-color: inherit;
+    color: inherit;
+    transform: none;
+    box-shadow: none;
+    border-color: inherit;
+}
+
+/* Odd card disabled buttons */
+.test-card:nth-child(odd) .test-btn:disabled {
+    background-color: #DDE8FE;
+    border-color: var(--light-blue);
+}
+
+/* Even card disabled buttons */
+.test-card:nth-child(even) .test-btn:disabled {
+    background-color: #B0CAFF;
+    border-color: var(--dark-blue);
+    color: var(--navy);
 }
