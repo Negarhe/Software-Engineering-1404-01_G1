@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>speaking exam</title>
+
+  <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+  <link rel="stylesheet" href="{% static 'team3/styles/index.css' %}">
+</head>
+<body>
+
+  <div class="page">
+    <header class="topbar">
+      <div class="top-left">
+        <div class="user-pill">
+          <div class="avatar" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="15" cy="11" r="5" fill="#647eb4"/>
+              <path d="M5 26c0-5 4-8 10-8s10 3 10 8" stroke="#647eb4" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <span class="username">name</span>
+          <span class="timer">59:02</span>
+        </div>
+      </div>
+
+      <div class="top-center">
+        <div class="exam-title">exam number 1</div>
+        <div class="exam-subtitle">speaking</div>
+      </div>
+
+      <div class="top-right">
+        <a class="pill-btn" href="#">توقف/ادامه</a>
+        <a class="pill-btn primary" href="#">خروج</a>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="q-card active">
+        <div class="q-text">
+          <div class="q-title">Question 1</div>
+          <div class="q-body">how are you today?</div>
+        </div>
+
+        <div class="q-actions">
+          <button class="action-btn">record voice</button>
+          <button class="action-btn">upload voice</button>
+        </div>
+      </section>
+
+      <section class="q-card dark">
+        <div class="q-text">
+          <div class="q-title">Question 1</div>
+          <div class="q-body">how are you today?</div>
+        </div>
+
+        <div class="q-actions">
+          <button class="action-btn">record voice</button>
+          <button class="action-btn">upload voice</button>
+        </div>
+      </section>
+
+      <section class="q-card light">
+        <div class="q-text">
+          <div class="q-title">Question 1</div>
+          <div class="q-body">how are you today?</div>
+        </div>
+
+        <div class="q-actions">
+          <button class="action-btn">record voice</button>
+          <button class="action-btn">upload voice</button>
+        </div>
+      </section>
+
+      <div class="finish-wrap">
+        <button class="finish-btn">Finish</button>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
