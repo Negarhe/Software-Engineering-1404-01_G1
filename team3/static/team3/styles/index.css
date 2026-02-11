@@ -1136,3 +1136,22 @@ body{
 }
 
 button:focus, a:focus{outline:3px solid rgba(79,123,230,0.18);outline-offset:2px}
+.feedback-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.feedback-meta {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 2px 0;
+}
+
+.feedback-divider {
+    width: 50%;
+    height: 1px;
+    background-color: var(--light-blue);
+    margin: 16px 0 20px 0;
+}
